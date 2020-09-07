@@ -2,6 +2,7 @@
 #' @importFrom broom tidy
 #' @importFrom stats terms formula coef
 #' @importFrom knitr knit_print asis_output
+#' @importFrom utils tail
 
 "_PACKAGE"
 

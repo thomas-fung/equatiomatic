@@ -31,7 +31,8 @@ create_eq.default <- function(model, lhs, rhs, ital_vars, use_coefs, coef_digits
   error_row <- rhs[nrow(rhs) + 1,]
   error_row$term <- "error"
   error_row$final_terms <- "\\epsilon"
-  rhs <- rbind(rhs, error_row)}
+  rhs <- rbind(rhs, error_row)
+  }
 
   list(lhs = list(lhs), rhs = list(rhs$final_terms))
 }
@@ -50,7 +51,7 @@ create_eq.glm <- function(model, lhs, rhs, ital_vars, use_coefs, coef_digits,
   }
   if (!is.null(model$offset)){
     rhs <- rbind(rhs, c(rep(NA, (dim(rhs)[2]-1)),
-                        add_tex_ital(utils::tail(names(attr(model$terms, "dataClasses")),1), ital_vars)))
+                        add_tex_ital(tail(names(attr(model$terms, "dataClasses")),1), ital_vars)))
   }
 
   list(lhs = list(lhs), rhs = list(rhs$final_terms))

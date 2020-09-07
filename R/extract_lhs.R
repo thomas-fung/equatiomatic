@@ -42,8 +42,8 @@ extract_lhs.lm <- function(model, ital_vars,
 
   lhs_escaped <- escape_tex(lhs)
   if (use_coefs){
-  lhs_escaped <- add_hat(lhs)}
-  add_tex_ital_v(lhs_escaped, ital_vars)
+    lhs_escaped <- add_hat(lhs)}
+    add_tex_ital_v(lhs_escaped, ital_vars)
 }
 
 
@@ -148,7 +148,7 @@ extract_lhs2_binomial <- function(model, ital_vars, ...){
   ss_escaped <- escape_tex(ss)
 
   lhs <- add_tex_ital_v(outcome_escaped, ital_vars)
-  p <- paste0("\\operatorname{prob}",
+  p <- paste0("\\operatorname{P}",
               add_tex_subscripts(
                 paste0(
                 add_tex_ital_v(outcome_escaped, ital_vars), " = ",
